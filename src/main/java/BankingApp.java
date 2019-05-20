@@ -15,6 +15,7 @@ public class BankingApp {
 		do {
 			System.out.println("Press 1 to check balance");
 			System.out.println("Press 2 to make a deposit");
+			System.out.println("Press 3 to make a withdrawal");
 			System.out.println("Press 9 to exit");
 			userChoice = input.nextLine();
 
@@ -29,6 +30,11 @@ public class BankingApp {
 				int amountToDeposit = input.nextInt();
 				account1.deposit(amountToDeposit);
 				input.nextLine(); // allows for user input spacing
+			} else if (userChoice.equals("3")) {
+				System.out.println("How much money do you want to withdrawal?");
+				int amountToWithdrawal = input.nextInt();
+				account1.withdrawal(amountToWithdrawal);
+				input.nextLine();
 			} else {
 				System.out.println("I'm sorry I don't understand your response.");
 			}

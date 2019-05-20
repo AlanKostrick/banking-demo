@@ -17,8 +17,26 @@ public class Account {
 		this.owner = owner;
 	}
 
+	public Account(String owner) {
+		this.balance = 250; //default account value
+		this.owner = owner;
+	}
+
 	public void deposit(int amountToDeposit) {
-		balance += amountToDeposit;
+		if (amountToDeposit < 0) {
+			balance += 0;
+		} else {
+			balance += amountToDeposit;
+		}
+	}
+
+	public void withdrawal(int amountToWithdrawal) {
+		if (amountToWithdrawal < 0 || amountToWithdrawal > balance) {
+			balance -= 0;
+			// System.out.println("Insufficient funds!");
+		} else {
+			balance -= amountToWithdrawal;
+		}
 	}
 
 }
