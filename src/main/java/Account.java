@@ -12,13 +12,14 @@ public class Account {
 		return owner;
 	}
 
+	//Overloaded constructors
 	public Account(int balance, String owner) {
 		this.balance = balance;
 		this.owner = owner;
 	}
 
 	public Account(String owner) {
-		this.balance = 250; //default account value
+		this.balance = 250; // default account value
 		this.owner = owner;
 	}
 
@@ -33,7 +34,7 @@ public class Account {
 	public void withdrawal(int amountToWithdrawal) {
 		if (amountToWithdrawal < 0 || amountToWithdrawal > balance) {
 			balance -= 0;
-			// System.out.println("Insufficient funds!");
+			System.out.println("Insufficient funds!");
 		} else {
 			balance -= amountToWithdrawal;
 		}
