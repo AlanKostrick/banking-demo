@@ -30,43 +30,33 @@ public class AccountTest {
 		int checkBalance = underTest.getBalance();
 		assertEquals(400, checkBalance);
 	}
-	
+
 	@Test
 	public void shouldHaveABalanceOf500AfterWithdrawalOf600() {
 		underTest.withdrawal(600);
 		int checkBalance = underTest.getBalance();
 		assertEquals(500, checkBalance);
 	}
-	
+
 	@Test
-	public void shouldHaveABalaceOf500AfterDepositOfNeg100(){
+	public void shouldHaveABalaceOf500AfterDepositOfNeg100() {
 		underTest.deposit(-100);
 		int checkBalance = underTest.getBalance();
 		assertEquals(500, checkBalance);
 	}
-	
+
 	@Test
 	public void shouldHaveABalanceOf500AfterWithdrawalOfNeg100() {
 		underTest.withdrawal(-100);
 		int checkBalance = underTest.getBalance();
 		assertEquals(500, checkBalance);
 	}
-	
-	
+
 	@Test
 	public void shouldHaveADefaultBalanceOf250WhenOpeningAnAccount() {
 		Account underTest2 = new Account("Uncle Bob");
 		int checkBalance = underTest2.getBalance();
 		assertEquals(250, checkBalance);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }
