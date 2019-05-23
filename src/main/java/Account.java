@@ -1,8 +1,9 @@
 
-public class Account {
+public abstract class Account {
 
-	private int balance;
-	private String owner;
+	protected int balance;
+	protected String owner;
+	protected String acctNum;
 
 	public int getBalance() {
 		return balance;
@@ -12,32 +13,12 @@ public class Account {
 		return owner;
 	}
 
-	//Overloaded constructors
-	public Account(int balance, String owner) {
-		this.balance = balance;
-		this.owner = owner;
+	public String getAcctNum() {
+		return acctNum;
 	}
 
-	public Account(String owner) {
-		this.balance = 250; // default account value
-		this.owner = owner;
-	}
+	public abstract void deposit(int amountToDeposit);
 
-	public void deposit(int amountToDeposit) {
-		if (amountToDeposit < 0) {
-			balance += 0;
-		} else {
-			balance += amountToDeposit;
-		}
-	}
-
-	public void withdrawal(int amountToWithdrawal) {
-		if (amountToWithdrawal < 0 || amountToWithdrawal > balance) {
-			balance -= 0;
-			System.out.println("Insufficient funds!");
-		} else {
-			balance -= amountToWithdrawal;
-		}
-	}
+	public abstract void withdrawal(int amountToWithdrawal);
 
 }

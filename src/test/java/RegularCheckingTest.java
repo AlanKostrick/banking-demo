@@ -1,9 +1,9 @@
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class AccountTest {
+public class RegularCheckingTest {
 
-	Account underTest = new Account(500, "Uncle Bob");
+	Account underTest = new RegularChecking("1", 500, "Uncle Bob");
 
 	@Test
 	public void shouldHaveABeginningBalanceOf500() {
@@ -54,7 +54,7 @@ public class AccountTest {
 
 	@Test
 	public void shouldHaveADefaultBalanceOf250WhenOpeningAnAccount() {
-		Account underTest2 = new Account("Uncle Bob");
+		Account underTest2 = new RegularChecking("1", "Uncle Bob");
 		int checkBalance = underTest2.getBalance();
 		assertEquals(250, checkBalance);
 	}

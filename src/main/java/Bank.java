@@ -6,19 +6,19 @@ public class Bank {
 	Map<String, Account> accounts = new HashMap<>();
 
 	public void addAccount(Account acctToAdd) {
-		accounts.put(acctToAdd.getOwner(), acctToAdd);
+		accounts.put(acctToAdd.getAcctNum(), acctToAdd);
 	}
 
 	public int getNumAccounts() {
 		return accounts.size();
 	}
 
-	public Account findAccount(String owner) {
-		return accounts.get(owner);
+	public Account findAccount(String acctNum) {
+		return accounts.get(acctNum);
 	}
 
 	public void closeAccount(Account acctToClose) {
-		accounts.remove(acctToClose.getOwner(), acctToClose);
+		accounts.remove(acctToClose.getAcctNum(), acctToClose);
 	}
 
 	public void depositAll(int amtToDeposit) {
