@@ -5,35 +5,35 @@ import static org.hamcrest.Matchers.notNullValue;
 import org.junit.Test;
 
 public class BankTest {
-	
-	Account account1 = new Account(500, "Uncle Bob");
-	Account account2 = new Account(400, "Marty Fowler");
+
+	Account account1 = new RegularChecking("1", 500, "Uncle Bob");
+	Account account2 = new RegularChecking("2", 400, "Marty Fowler");
 	Bank underTest = new Bank();
-	
+
 	@Test
 	public void shouldAddAnAccountToTheBank() {
 		underTest.addAccount(account1);
 		int numAccounts = underTest.getNumAccounts();
 		assertThat(numAccounts, is(1));
 	}
-	
+
 	@Test
 	public void shouldAddTwoAccountsToTheBank() {
 		underTest.addAccount(account1);
 		underTest.addAccount(account2);
 		int numAccounts = underTest.getNumAccounts();
 		assertThat(numAccounts, is(2));
-		assertThat(numAccounts,is(notNullValue()));
+		assertThat(numAccounts, is(notNullValue()));
 	}
-	
+
 	@Test
 	public void shouldReturnBalanceOf500WhenFindingAccount1() {
 		underTest.addAccount(account1);
-		Account acctToFind = underTest.findAccount("Uncle Bob");
+		Account acctToFind = underTest.findAccount("1");
 		int foundBalance = acctToFind.getBalance();
 		assertThat(foundBalance, is(500));
 	}
-	
+
 	@Test
 	public void shouldCloseAnAccountAtTheBank() {
 		underTest.addAccount(account1);
@@ -42,7 +42,7 @@ public class BankTest {
 		int numAccounts = underTest.getNumAccounts();
 		assertThat(numAccounts, is(1));
 	}
-	
+
 	@Test
 	public void shouldHaveBalancesOf600And500AfterDepositAllOf100() {
 		underTest.addAccount(account1);
@@ -51,23 +51,5 @@ public class BankTest {
 		assertThat(account1.getBalance(), is(600));
 		assertThat(account2.getBalance(), is(500));
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }
