@@ -1,5 +1,9 @@
+package checking;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
+import checking.RegularChecking;
+import models.Account;
 
 public class RegularCheckingTest {
 

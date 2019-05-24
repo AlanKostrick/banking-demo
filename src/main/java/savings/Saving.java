@@ -1,15 +1,11 @@
+package savings;
 
-public abstract class Checking extends Account {
+import models.Account;
 
-	public Checking(String acctNum, int balance, String owner) {
-		this.acctNum = acctNum;
-		this.balance = balance;
-		this.owner = owner;
-	}
+public abstract class Saving extends Account {
 
-	public Checking(String acctNum, String owner) {
-		this.acctNum = acctNum;
-		this.owner = owner;
+	public Saving() {
+		super();
 	}
 
 	@Override

@@ -1,10 +1,14 @@
+package checking;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import checking.HighYieldChecking;
+import models.Account;
+
 public class HighYieldCheckingTest {
 
-	Account underTest = new HighYieldChecking("1", 1000, "Uncle Bob");
+	HighYieldChecking underTest = new HighYieldChecking("1", 1000, "Uncle Bob");
 
 	@Test
 	public void shouldHaveABeginningBalanceOf1000() {
@@ -52,5 +56,24 @@ public class HighYieldCheckingTest {
 		int checkBalance = underTest.getBalance();
 		assertEquals(1000, checkBalance);
 	}
+	
+	@Test
+	public void shouldHaveABalanceOf1010AfterImplementingAReward() {
+		underTest.earnReward();
+		int checkBalance = underTest.getBalance();
+		assertEquals(1010, checkBalance);
+	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

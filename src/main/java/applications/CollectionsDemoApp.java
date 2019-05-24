@@ -1,8 +1,13 @@
+package applications;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+
+import checking.RegularChecking;
+import models.Account;
 
 public class CollectionsDemoApp {
 
@@ -10,9 +15,9 @@ public class CollectionsDemoApp {
 
 		Scanner input = new Scanner(System.in);
 
-		Account account1 = new Account(500, "Uncle Bob");
-		Account account2 = new Account(400, "Marty Fowler");
-		Account account3 = new Account("Barb Liskov");
+		Account account1 = new RegularChecking("1",500, "Uncle Bob");
+		Account account2 = new RegularChecking("2",400, "Marty Fowler");
+		Account account3 = new RegularChecking("3","Barb Liskov");
 
 		System.out.println("Array Demo");
 		Account[] accountsArray = { account1, account2, account3 };
@@ -25,7 +30,7 @@ public class CollectionsDemoApp {
 		Account[] updatedAccountsArray = { account1, account2 };
 
 		System.out.println("Array List Demo:");
-		List<Account> accountsList = new ArrayList<>(); // declare
+		List<Account> accountsList = new LinkedList<>(); // declare
 
 		// build
 		accountsList.add(account1); // idx 0

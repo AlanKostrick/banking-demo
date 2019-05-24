@@ -1,4 +1,4 @@
-
+package checking;
 public class RegularChecking extends Checking {
 
 	public RegularChecking(String acctNum, int balance, String owner) {

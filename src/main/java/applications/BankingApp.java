@@ -1,4 +1,8 @@
+package applications;
 import java.util.Scanner;
+
+import checking.RegularChecking;
+import models.Account;
 
 public class BankingApp {
 
@@ -6,7 +10,7 @@ public class BankingApp {
 
 		Scanner input = new Scanner(System.in);
 
-		Account account1 = new Account(500, "Uncle Bob");
+		Account account1 = new RegularChecking("1",500, "Uncle Bob");
 
 		System.out.println("Hello welcome to Bank Of WCCI");
 
