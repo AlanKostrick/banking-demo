@@ -1,5 +1,10 @@
+package models;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
+import interfaces.Rewardable;
 
 public class Bank {
 
@@ -32,6 +37,16 @@ public class Bank {
 		for (Account account : accounts.values()) {
 			System.out.println(account.getBalance() + " " + account.getOwner());
 		}
+	}
+
+	public Collection<Account> showAllHighYieldAccounts() {
+		Collection<Account> highYieldAccounts = new ArrayList<>();
+		for(Account account: accounts.values()) {
+			if(account instanceof Rewardable) {
+				highYieldAccounts.add(account);
+			}
+		}
+		return highYieldAccounts;
 	}
 
 }

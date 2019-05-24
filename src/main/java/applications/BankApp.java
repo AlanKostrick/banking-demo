@@ -1,4 +1,9 @@
+package applications;
 import java.util.Scanner;
+
+import checking.RegularChecking;
+import models.Account;
+import models.Bank;
 
 public class BankApp {
 
@@ -6,9 +11,9 @@ public class BankApp {
 		Scanner input = new Scanner(System.in);
 		Bank myBank = new Bank();
 		
-		Account uncleBob = new Account(500, "Uncle Bob");
-		Account marty = new Account(400, "Marty Fowler");
-		Account barb = new Account("Barb Liskov");
+		Account uncleBob = new RegularChecking("1",500, "Uncle Bob");
+		Account marty = new RegularChecking("2",400, "Marty Fowler");
+		Account barb = new RegularChecking("3","Barb Liskov");
 		
 		myBank.addAccount(uncleBob);
 		myBank.addAccount(marty);

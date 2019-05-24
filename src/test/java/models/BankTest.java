@@ -1,8 +1,20 @@
+package models;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.notNullValue;
 
+import java.util.Collection;
+
 import org.junit.Test;
+
+import checking.HighYieldChecking;
+import checking.RegularChecking;
+import models.Account;
+import models.Bank;
+import savings.HighYieldSaving;
+import savings.RegularSaving;
 
 public class BankTest {
 
@@ -50,6 +62,23 @@ public class BankTest {
 		underTest.depositAll(100);
 		assertThat(account1.getBalance(), is(600));
 		assertThat(account2.getBalance(), is(500));
+	}
+
+	@Test
+	public void shouldFindAllRewardableAccounts() {
+		RegularChecking account1 = new RegularChecking("1", 500, "Uncle Bob");
+		HighYieldChecking account2 = new HighYieldChecking("2", 400, "Marty Fowler");
+		RegularSaving account3 = new RegularSaving("3", 500, "Barb Liskov");
+		HighYieldSaving account4 = new HighYieldSaving("4", 400, "Ada Lovelace");
+
+		underTest.addAccount(account1);
+		underTest.addAccount(account2);
+		underTest.addAccount(account3);
+		underTest.addAccount(account4);
+
+		Collection<Account> highYieldAccounts = underTest.showAllHighYieldAccounts();
+		System.out.println("High Yield Accounts: " + highYieldAccounts);
+		assertThat(highYieldAccounts, containsInAnyOrder(account2, account4));
 	}
 
 }
