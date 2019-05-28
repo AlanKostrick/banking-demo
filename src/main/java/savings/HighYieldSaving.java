@@ -5,14 +5,12 @@ import interfaces.Rewardable;
 public class HighYieldSaving extends Saving implements Rewardable {
 
 	public HighYieldSaving(String acctNum, int balance, String owner) {
-		this.acctNum = acctNum;
-		this.balance = balance;
-		this.owner = owner;
+		super(acctNum, balance, owner);
 	}
-	
+
 	@Override
 	public void earnReward() {
-		balance +=10;
+		this.increaseBalance(10);
 	}
 
 }

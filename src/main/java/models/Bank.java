@@ -1,4 +1,5 @@
 package models;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -23,7 +24,7 @@ public class Bank {
 	}
 
 	public void closeAccount(Account acctToClose) {
-		accounts.remove(acctToClose.getAcctNum(), acctToClose);
+		accounts.remove(acctToClose.getAcctNum());
 	}
 
 	public void depositAll(int amtToDeposit) {
@@ -41,8 +42,8 @@ public class Bank {
 
 	public Collection<Account> showAllHighYieldAccounts() {
 		Collection<Account> highYieldAccounts = new ArrayList<>();
-		for(Account account: accounts.values()) {
-			if(account instanceof Rewardable) {
+		for (Account account : accounts.values()) {
+			if (account instanceof Rewardable) {
 				highYieldAccounts.add(account);
 			}
 		}

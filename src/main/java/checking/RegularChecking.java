@@ -7,7 +7,7 @@ public class RegularChecking extends Checking {
 
 	public RegularChecking(String acctNum, String owner) {
 		super(acctNum, owner);
-		this.balance = 250;
+		//this.balance = 250;
 	}
 
 }
