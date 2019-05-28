@@ -10,7 +10,7 @@ public class HighYieldChecking extends Checking implements Rewardable {
 
 	@Override
 	public void earnReward() {
-		balance += 10;
+		this.increaseBalance(10);
 	}
 
 }

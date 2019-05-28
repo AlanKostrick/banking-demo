@@ -50,7 +50,8 @@ public class BankTest {
 	public void shouldCloseAnAccountAtTheBank() {
 		underTest.addAccount(account1);
 		underTest.addAccount(account2);
-		underTest.closeAccount(account1);
+		Account accountToClose = underTest.findAccount("2");
+		underTest.closeAccount(accountToClose);
 		int numAccounts = underTest.getNumAccounts();
 		assertThat(numAccounts, is(1));
 	}
